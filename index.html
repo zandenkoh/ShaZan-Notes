@@ -1,247 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>ShaZan</title>
-    </head>
-    <body>
-        <h1>ShaZan</h1>
-        <p>Welcome to ShaZan! This is your note-taking platform, where you can keep all of your ideas and thoughts into one place.</p>
-        <a href="https://forms.gle/xmeUoKoSptDrjQYo8" target="_blank">User Feedback</a>
-    </body>
-    </html>
-    
-    
-    
-</body>
-</html>
+  <title>ShaZan Notes</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
 
+    .banner {
+      background-color: #547278;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
 
+    .banner h1 {
+      font-size: 32px;
+      margin: 0;
+      text-transform: uppercase;
+    }
 
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-    <style>
-        body {
-            font-family:'Times New Roman', Times, serif
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        h1 {
-            background-color: #b3d1ee;
-            max-height: 500px;
-            max-width: 2000px;
-            position: center;
-            text-decoration-color: #ffffff;
-            text-emphasis-color: bbbbbb;
-        
-
-        }
-        
-        p { size: 14;}
-    
-        
-
-        .note-form {
-            margin-bottom: 20px;
-        }
-
-        .note-form label {
-            display: block;
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .note-form input[type="text"],
-        .note-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
-
-        .note-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .note-item {
-            background-color: #f5f5f5;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .note-item .note-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .note-item .note-content {
-            font-size: 16px;
-            line-height: 1.4;
-        }
-
-        .note-item .note-date {
-            font-size: 14px;
-            color: #777;
-        }
-
-        .note-item .note-actions {
-            margin-top: 10px;
-        }
-
-        .note-item .note-actions button {
-            padding: 5px 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            margin-right: 5px;
-        }
-    </style>
+    .banner p {
+      font-size: 18px;
+      margin: 10px 0 0;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1></h1>
-        <form class="note-form">
-            <label for="note-title">Topic:</label>
-            <input type="text" id="note-title" placeholder="Enter a topic...">
-
-            <label for="note-content">Content:</label>
-            <textarea id="note-content" rows="5" placeholder="Start writing!"></textarea>
-
-            <button type="button" onclick="saveNote()">Save</button>
-        </form>
-
-        <ul class="note-list" id="note-list"></ul>
-    </div>
-
-    <script>
-        function getFormattedDate() {
-            const date = new Date();
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            return date.toLocaleDateString(undefined, options);
-        }
-
-        function saveNote() {
-            const title = document.getElementById('note-title').value;
-            const content = document.getElementById('note-content').value;
-            const date = getFormattedDate();
-
-            const note = {
-                title: title,
-                content: content,
-                date: date
-            };
-
-            let notes = JSON.parse(localStorage.getItem('notes')) || [];
-            notes.push(note);
-
-            localStorage.setItem('notes', JSON.stringify(notes));
-
-            displayNotes();
-            document.getElementById('note-title').value = '';
-            document.getElementById('note-content').value = '';
-        }
-
-        function deleteNote(index) {
-            let notes = JSON.parse(localStorage.getItem('notes')) || [];
-            notes.splice(index, 1);
-            localStorage.setItem('notes', JSON.stringify(notes));
-            displayNotes();
-        }
-
-        function displayNotes() {
-            const noteList = document.getElementById('note-list');
-            noteList.innerHTML = '';
-
-            let notes = JSON.parse(localStorage.getItem('notes')) || [];
-
-            notes.forEach((note, index) => {
-                const li = document.createElement('li');
-                li.classList.add('note-item');
-
-                const title = document.createElement('div');
-                title.classList.add('note-title');
-                title.textContent = note.title;
-
-                const content = document.createElement('div');
-                content.classList.add('note-content');
-                content.textContent = note.content;
-
-                const date = document.createElement('div');
-                date.classList.add('note-date');
-                date.textContent = note.date;
-
-                const actions = document.createElement('div');
-                actions.classList.add('note-actions');
-
-                const deleteButton = document.createElement('button');
-                deleteButton.textContent = 'Delete';
-                deleteButton.addEventListener('click', () => deleteNote(index));
-
-                actions.appendChild(deleteButton);
-
-                li.appendChild(title);
-                li.appendChild(content);
-                li.appendChild(date);
-                li.appendChild(actions);
-
-                noteList.appendChild(li);
-            });
-        }
-
-        displayNotes();
-    </script>
+  <div class="banner">
+    <h1>ShaZan</h1>
+    <p>Notes Evolved...</p>
+  </div>
+  
+  <!-- Rest of your website content goes here -->
 </body>
 </html>
-
-    
-
-    
-    
-   
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -252,168 +47,257 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Folders</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .heading {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        
-        .folder-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .folder-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #f2f2f2;
-            margin-bottom: 10px;
-        }
-        
-        .folder-item input {
-            border: none;
-            background-color: transparent;
-            font-size: 16px;
-            margin-right: 10px;
-            flex: 1;
-        }
-        
-        .folder-item button {
-            background-color: #ff0000;
-            color: #ffffff;
-            border: none;
-            padding: 8px 16px;
-            font-size: 14px;
-            cursor: pointer;
-        }
-        
-        .folder-item button:hover {
-            background-color: #cc0000;
-        }
-    </style>
-    <script>
-        // Function to delete a folder
-        function deleteFolder(folderId) {
-            console.log("Deleting folder with ID: " + folderId);
-            var folderElement = document.getElementById("folder-" + folderId);
-            folderElement.remove();
-            
-            // Remove the folder from local storage
-            var folders = JSON.parse(localStorage.getItem("folders")) || [];
-            folders = folders.filter(function(folder) {
-                return folder.id !== folderId;
-            });
-            localStorage.setItem("folders", JSON.stringify(folders));
-        }
-        
-        // Function to add a new folder
-        function addFolder() {
-            var folderList = document.getElementById("folder-list");
-            
-            var folderId = new Date().getTime(); // Generate a unique ID for the folder
-            
-            var folderItem = document.createElement("li");
-            folderItem.setAttribute("id", "folder-" + folderId);
-            folderItem.classList.add("folder-item");
-            
-            var folderInput = document.createElement("input");
-            folderInput.setAttribute("type", "text");
-            folderInput.setAttribute("placeholder", "Enter folder name");
-            
-            var deleteButton = document.createElement("button");
-            deleteButton.innerHTML = "Delete";
-            deleteButton.addEventListener("click", function() {
-                deleteFolder(folderId);
-            });
-            
-            folderItem.appendChild(folderInput);
-            folderItem.appendChild(deleteButton);
-            
-            folderList.appendChild(folderItem);
-            
-            // Save the folder to local storage
-            var folders = JSON.parse(localStorage.getItem("folders")) || [];
-            var folder = {
-                id: folderId,
-                name: ""
-            };
-            folders.push(folder);
-            localStorage.setItem("folders", JSON.stringify(folders));
-        }
-        
-        // Function to update folder name in local storage
-        function updateFolderName(folderId, newName) {
-            var folders = JSON.parse(localStorage.getItem("folders")) || [];
-            
-            folders.forEach(function(folder) {
-                if (folder.id === folderId) {
-                    folder.name = newName;
-                }
-            });
-            
-            localStorage.setItem("folders", JSON.stringify(folders));
-        }
-        
-        // Function to load folders from local storage
-        function loadFolders() {
-            var folderList = document.getElementById("folder-list");
-            
-            var folders = JSON.parse(localStorage.getItem("folders")) || [];
-            
-            folders.forEach(function(folder) {
-                var folderItem = document.createElement("li");
-                folderItem.setAttribute("id", "folder-" + folder.id);
-                folderItem.classList.add("folder-item");
-                
-                var folderInput = document.createElement("input");
-                folderInput.setAttribute("type", "text");
-                folderInput.setAttribute("placeholder", "Enter folder name");
-                folderInput.value = folder.name;
-                folderInput.addEventListener("input", function() {
-                    updateFolderName(folder.id, folderInput.value);
-                });
-                
-                var deleteButton = document.createElement("button");
-                deleteButton.innerHTML = "Delete";
-                deleteButton.addEventListener("click", function() {
-                    deleteFolder(folder.id);
-                });
-                
-                folderItem.appendChild(folderInput);
-                folderItem.appendChild(deleteButton);
-                
-                folderList.appendChild(folderItem);
-            });
-        }
-    </script>
+  <title>ShaZan</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-height: 700px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+      
+    }
+    
+    h2 {
+        text-transform: uppercase;
+    }
+
+    .note {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s;
+    }
+
+    .note:hover {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .note-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .note-content {
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .note-label {
+      font-size: 12px;
+      color: #888;
+    }
+
+    .note-input {
+      margin-bottom: 10px;
+    }
+
+    .note-input label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .note-input input[type="text"],
+    .note-input textarea {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      margin-bottom: 10px;
+      transition: border-color 0.3s;
+    }
+
+    .note-input input[type="text"]:focus,
+    .note-input textarea:focus {
+      outline: none;
+      border-color: #4caf50;
+    }
+
+    .note-input button {
+      padding: 6px 12px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .note-input button:hover {
+      background-color: #45a049;
+    }
+
+    .note-delete-button {
+      background-color: transparent;
+      color: #7b7b7b;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 0;
+      margin-left: 10px;
+    }
+
+    .note-delete-button:hover {
+      color: #ff0000;
+    }
+  </style>
 </head>
-<body onload="loadFolders()">
-    <div class="container">
-        <h2 class="heading">Folders</h2>
-        <ul id="folder-list" class="folder-list"></ul>
-        <button onclick="addFolder()">Add Folder</button>
+<body>
+  <div class="container">
+    <h2>My Notes</h2>
+    <div id="notesContainer"></div>
+    <div class="note-input">
+      <label for="titleInput">Title</label>
+      <input type="text" id="titleInput" placeholder="Enter title">
+
+      <label for="contentInput">Add Note</label>
+      <textarea id="contentInput" rows="4" placeholder="Enter note..."></textarea>
+
+      <label for="labelInput">Label</label>
+      <input type="text" id="labelInput" placeholder="Enter label">
+
+      <button id="saveButton">Save Note</button>
     </div>
-    <script>
-        // Save the initial folder list to local storage
-        var initialFolders = JSON.parse(localStorage.getItem("folders")) || [];
-        if (initialFolders.length === 0) {
-            localStorage.setItem("folders", "[]");
-        }
-    </script>
+  </div>
+
+  <script>
+    // Get necessary elements
+    const titleInput = document.getElementById('titleInput');
+    const contentInput = document.getElementById('contentInput');
+    const labelInput = document.getElementById('labelInput');
+    const saveButton = document.getElementById('saveButton');
+    const notesContainer = document.getElementById('notesContainer');
+
+    // Function to create a new note
+    function createNote() {
+      const title = titleInput.value;
+      const content = contentInput.value;
+      const label = labelInput.value;
+
+      if (title.trim() !== '' && content.trim() !== '') {
+        const noteElement = document.createElement('div');
+        noteElement.classList.add('note');
+
+        const titleElement = document.createElement('div');
+        titleElement.classList.add('note-title');
+        titleElement.textContent = title;
+
+        const contentElement = document.createElement('div');
+        contentElement.classList.add('note-content');
+        contentElement.textContent = content;
+
+        const labelElement = document.createElement('div');
+        labelElement.classList.add('note-label');
+        labelElement.textContent = label;
+
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('note-delete-button');
+        deleteButton.textContent = 'Delete';
+
+        noteElement.appendChild(titleElement);
+        noteElement.appendChild(contentElement);
+        noteElement.appendChild(labelElement);
+        noteElement.appendChild(deleteButton);
+
+        notesContainer.appendChild(noteElement);
+
+        // Clear input fields
+        titleInput.value = '';
+        contentInput.value = '';
+        labelInput.value = '';
+
+        // Add event listener for delete button
+        deleteButton.addEventListener('click', function () {
+          noteElement.remove();
+          saveNotes();
+        });
+
+        saveNotes();
+      }
+    }
+
+    // Function to load saved notes from local storage
+    function loadNotes() {
+      const savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
+      savedNotes.forEach(function (note) {
+        const noteElement = document.createElement('div');
+        noteElement.classList.add('note');
+
+        const titleElement = document.createElement('div');
+        titleElement.classList.add('note-title');
+        titleElement.textContent = note.title;
+
+        const contentElement = document.createElement('div');
+        contentElement.classList.add('note-content');
+        contentElement.textContent = note.content;
+
+        const labelElement = document.createElement('div');
+        labelElement.classList.add('note-label');
+        labelElement.textContent = note.label;
+
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('note-delete-button');
+        deleteButton.textContent = 'Delete';
+
+        noteElement.appendChild(titleElement);
+        noteElement.appendChild(contentElement);
+        noteElement.appendChild(labelElement);
+        noteElement.appendChild(deleteButton);
+
+        notesContainer.appendChild(noteElement);
+
+        // Add event listener for delete button
+        deleteButton.addEventListener('click', function () {
+          noteElement.remove();
+          saveNotes();
+        });
+      });
+    }
+
+    // Function to save notes to local storage
+    function saveNotes() {
+      const noteElements = Array.from(notesContainer.querySelectorAll('.note'));
+      const notes = noteElements.map(function (noteElement) {
+        const title = noteElement.querySelector('.note-title').textContent;
+        const content = noteElement.querySelector('.note-content').textContent;
+        const label = noteElement.querySelector('.note-label').textContent;
+        return { title, content, label };
+      });
+      localStorage.setItem('notes', JSON.stringify(notes));
+    }
+
+    // Event listener for save button click
+    saveButton.addEventListener('click', createNote);
+
+    loadNotes();
+  </script>
 </body>
 </html>
 
@@ -423,18 +307,29 @@
 
 
 
-</html>
+
+
+
+<br 
+
+
+
+<html> 
+
 <!DOCTYPE html>
     <html>
     <head>
     
     
-        <div class="container">
-            <!-- Your note-taking section here -->
-        </div>
+    
     
         <footer>
             <p>&copy; 2023 ShaZan. All rights reserved.</p>
         </footer>
     </body>
     </html>
+
+
+    For user feedback: https://forms.gle/xmeUoKoSptDrjQYo8
+
+</html>

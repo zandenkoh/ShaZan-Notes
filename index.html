@@ -3,6 +3,29 @@
 <head>
   <title>ShaZan Notes</title>
   <style>
+    /* CSS styles for the design */
+    ...
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <img src="https://github.com/zandenkoh/ShaZan-Notes/blob/main/My%20project%20(2).png?raw=true" alt="Custom Image">
+
+  </div>
+  
+  <style>
+  .banner img {
+    width: 250px; /* Adjust the width as needed */
+    object-position: 40%;
+  }
+  
+</style>
+  
+  
+  
+  
+  
+  <style>
     body {
       margin: 0;
       padding: 0;
@@ -10,35 +33,59 @@
     }
 
     .banner {
-      background-image: url('https://rare-gallery.com/mocahbig/391716-beach-ocean-wave-aerial-view-scenery-4k-pc-wallpaper.jpg'); /* Replace with the URL of your image */
-      background-size: cover;
-      background-position: center;
-      color: #000000;
-      text-align: center;
-      padding: 20px;
+       
+       background-size: cover;
+       background-position: center;
+       color: #000000;
+       text-align: center;
+       padding: 20px;
     }
+      
+    
 
     .banner h1 {
       font-size: 32px;
       margin: 0;
       text-transform: uppercase;
+      color: #ffffff;
     }
 
     .banner p {
       font-size: 18px;
       margin: 10px 0 0;
+      color: #ffffff;
     }
   </style>
-</head>
-<body>
-  <div class="banner">
-    <h1>ShaZan</h1>
-    <p>Notes Evolved...</p>
-  </div>
-  
-  <!-- Rest of your website content goes here -->
+  ...
 </body>
 </html>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -63,51 +110,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ShaZan</title>
+  <title>ShaZan Notes</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    /* CSS styles for the design */
 
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      background-image: url('https://4kwallpapers.com/images/wallpapers/ocean-waves-aerial-view-ocean-water-drone-photo-3665x2443-317.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
     }
 
     .container {
       max-width: 1200px;
       margin: 20px auto;
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.8);
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       padding: 20px;
       max-height: 700px;
+      overflow-y: auto;
+    }
+    
+    .label-input {
+      margin-bottom: 10px;
     }
 
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #ffffff;
+    .label-input label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #333;
     }
 
-    p {
-        color:#ffffff;
+    .label-input input[type="text"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      margin-bottom: 10px;
+      transition: border-color 0.3s;
+    }
+
+    .label-input input[type="text"]:focus {
+      outline: none;
+      border-color: #4caf50;
+    }
+
+    .label-list {
+      margin-bottom: 10px;
+    }
+
+    .label-list label {
+      margin-right: 10px;
+      color: #333;
+    }
+
+    .label-list input[type="checkbox"] {
+      margin-right: 5px;
     }
 
     h2 {
       text-transform: uppercase;
+      color: #000000;
     }
 
     .note {
-      background-color: #fff;
+      background-color: #ffffff;
       border: 1px solid #ddd;
       border-radius: 5px;
       padding: 10px;
       margin-bottom: 10px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       transition: box-shadow 0.3s;
+      position: relative;
     }
 
     .note:hover {
@@ -125,11 +204,23 @@
       font-size: 14px;
       margin-bottom: 5px;
       color: #555;
+      white-space: pre-wrap;
     }
 
     .note-label {
       font-size: 12px;
       color: #888;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+
+    .note-date {
+      font-size: 12px;
+      color: #888;
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
     }
 
     .note-input {
@@ -181,205 +272,166 @@
       cursor: pointer;
       padding: 0;
       margin-left: 10px;
+      font-size: 16px;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
     }
 
     .note-delete-button:hover {
-      color: #ff0000;
+      color: #000;
     }
 
-    /* Media queries for responsive design */
+    @media only screen and (max-width: 600px) {
+      body {
+        background-size: auto;
+        padding: 10px;
+      }
 
-    @media screen and (max-width: 600px) {
-      h1 {
-        font-size: 24px;
+      .container {
+        background-color: rgba(255, 255, 255, 0.9);
+        max-height: none;
+        overflow-y: visible;
+        padding: 10px;
+      }
+
+      .note {
+        margin-bottom: 20px;
       }
 
       .note-title {
-        font-size: 16px;
+        font-size: 20px;
       }
 
       .note-content {
-        font-size: 12px;
+        font-size: 16px;
       }
 
-      .note-label {
-        font-size: 10px;
+      .note-label,
+      .note-date {
+        font-size: 14px;
       }
 
-      .note-input input[type="text"],
-      .note-input textarea {
-        font-size: 12px;
-      }
-
-      .note-input button {
-        font-size: 12px;
-        padding: 4px 8px;
+      .note-delete-button {
+        font-size: 20px;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>My Notes</h2>
-    <div id="notesContainer"></div>
-    <div class="note-input">
-      <label for="titleInput">Title</label>
-      <input type="text" id="titleInput" placeholder="Enter title">
-
-      <label for="contentInput">Add Note</label>
-      <textarea id="contentInput" rows="4" placeholder="Enter note..."></textarea>
-
-      <label for="labelInput">Label</label>
-      <input type="text" id="labelInput" placeholder="Enter label">
-
-      <button id="saveButton">Save Note</button>
+    <h2>ShaZan Notes</h2>
+    <div class="label-input">
+      <label for="custom-label">Custom Label:</label>
+      <input type="text" id="custom-label" placeholder="Enter label">
     </div>
+    <div class="label-list">
+      <label>Existing Labels:</label>
+      <label><input type="checkbox" value="red">Red</label>
+      <label><input type="checkbox" value="orange">Orange</label>
+      <label><input type="checkbox" value="yellow">Yellow</label>
+      <label><input type="checkbox" value="green">Green</label>
+      <label><input type="checkbox" value="blue">Blue</label>
+    </div>
+    <div class="note-input">
+      <label for="note-title">Title:</label>
+      <input type="text" id="note-title" placeholder="Enter title">
+      <label for="note-content">Content:</label>
+      <textarea id="note-content" placeholder="Enter content"></textarea>
+      <button id="save-note">Save Note</button>
+    </div>
+    <div id="note-list"></div>
   </div>
 
   <script>
-    // Get necessary elements
-    const titleInput = document.getElementById('titleInput');
-    const contentInput = document.getElementById('contentInput');
-    const labelInput = document.getElementById('labelInput');
-    const saveButton = document.getElementById('saveButton');
-    const notesContainer = document.getElementById('notesContainer');
+    document.getElementById("save-note").addEventListener("click", function() {
+      var title = document.getElementById("note-title").value;
+      var content = document.getElementById("note-content").value;
+      var label = getSelectedLabels();
+      var date = new Date().toLocaleString();
 
-    // Function to create a new note
-    function createNote() {
-      const title = titleInput.value;
-      const content = contentInput.value;
-      const label = labelInput.value;
-
-      if (title.trim() !== '' && content.trim() !== '') {
-        const noteElement = document.createElement('div');
-        noteElement.classList.add('note');
-
-        const titleElement = document.createElement('div');
-        titleElement.classList.add('note-title');
-        titleElement.textContent = title;
-
-        const contentElement = document.createElement('div');
-        contentElement.classList.add('note-content');
-        contentElement.textContent = content;
-
-        const labelElement = document.createElement('div');
-        labelElement.classList.add('note-label');
-        labelElement.textContent = label;
-
-        const deleteButton = document.createElement('button');
-        deleteButton.classList.add('note-delete-button');
-        deleteButton.textContent = 'Delete';
-
-        noteElement.appendChild(titleElement);
-        noteElement.appendChild(contentElement);
-        noteElement.appendChild(labelElement);
-        noteElement.appendChild(deleteButton);
-
-        notesContainer.appendChild(noteElement);
-
-        // Clear input fields
-        titleInput.value = '';
-        contentInput.value = '';
-        labelInput.value = '';
-
-        // Add event listener for delete button
-        deleteButton.addEventListener('click', function () {
-          noteElement.remove();
-          saveNotes();
-        });
-
-        saveNotes();
+      if (title.trim() !== "" && content.trim() !== "") {
+        var note = createNoteElement(title, content, label, date);
+        document.getElementById("note-list").appendChild(note);
+        saveNotesToLocalStorage();
+        clearInputs();
       }
+    });
+
+    function getSelectedLabels() {
+      var selectedLabels = [];
+      var checkboxes = document.querySelectorAll('.label-list input[type="checkbox"]:checked');
+
+      for (var i = 0; i < checkboxes.length; i++) {
+        selectedLabels.push(checkboxes[i].value);
+      }
+
+      var customLabel = document.getElementById("custom-label").value.trim();
+      if (customLabel !== "") {
+        selectedLabels.push(customLabel);
+      }
+
+      return selectedLabels;
     }
 
-    // Function to load saved notes from local storage
-    function loadNotes() {
-      const savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
-      savedNotes.forEach(function (note) {
-        const noteElement = document.createElement('div');
-        noteElement.classList.add('note');
+    function createNoteElement(title, content, labels, date) {
+      var note = document.createElement("div");
+      note.className = "note";
+      note.innerHTML =
+        '<h3 class="note-title">' +
+        title +
+        '<button class="note-delete-button" onclick="deleteNote(this)">&#10005;</button></h3>' +
+        '<p class="note-content">' +
+        content +
+        '</p>' +
+        '<span class="note-labels">' + generateLabelElements(labels) + '</span>' +
+        '<span class="note-date">' + date + '</span>';
+      return note;
+    }
 
-        const titleElement = document.createElement('div');
-        titleElement.classList.add('note-title');
-        titleElement.textContent = note.title;
+    function generateLabelElements(labels) {
+      var labelElements = '';
+      for (var i = 0; i < labels.length; i++) {
+        labelElements += '<span class="note-label ' + labels[i] + '">' + labels[i] + '</span>';
+      }
+      return labelElements;
+    }
 
-        const contentElement = document.createElement('div');
-        contentElement.classList.add('note-content');
-        contentElement.textContent = note.content;
+    function deleteNote(deleteButton) {
+      var note = deleteButton.parentNode.parentNode;
+      note.parentNode.removeChild(note);
+      saveNotesToLocalStorage();
+    }
 
-        const labelElement = document.createElement('div');
-        labelElement.classList.add('note-label');
-        labelElement.textContent = note.label;
-
-        const deleteButton = document.createElement('button');
-        deleteButton.classList.add('note-delete-button');
-        deleteButton.textContent = 'Delete';
-
-        noteElement.appendChild(titleElement);
-        noteElement.appendChild(contentElement);
-        noteElement.appendChild(labelElement);
-        noteElement.appendChild(deleteButton);
-
-        notesContainer.appendChild(noteElement);
-
-        deleteButton.addEventListener('click', function () {
-          noteElement.remove();
-          saveNotes();
-        });
+    function clearInputs() {
+      document.getElementById("note-title").value = "";
+      document.getElementById("note-content").value = "";
+      document.querySelectorAll('.label-list input[type="checkbox"]').forEach(function(checkbox) {
+        checkbox.checked = false;
       });
+      document.getElementById("custom-label").value = "";
     }
 
-    // Function to save notes to local storage
-    function saveNotes() {
-      const notes = [];
-      const noteElements = notesContainer.getElementsByClassName('note');
-      for (let i = 0; i < noteElements.length; i++) {
-        const noteElement = noteElements[i];
-        const titleElement = noteElement.getElementsByClassName('note-title')[0];
-        const contentElement = noteElement.getElementsByClassName('note-content')[0];
-        const labelElement = noteElement.getElementsByClassName('note-label')[0];
-
-        const note = {
-          title: titleElement.textContent,
-          content: contentElement.textContent,
-          label: labelElement.textContent,
-        };
-        notes.push(note);
-      }
-      localStorage.setItem('notes', JSON.stringify(notes));
+    function saveNotesToLocalStorage() {
+      var notes = document.getElementById("note-list").innerHTML;
+      localStorage.setItem("notes", notes);
     }
-
-    // Add event listener for save button
-    saveButton.addEventListener('click', createNote);
 
     // Load saved notes on page load
-    loadNotes();
+    window.addEventListener("load", function() {
+      var savedNotes = localStorage.getItem("notes");
+      if (savedNotes) {
+        document.getElementById("note-list").innerHTML = savedNotes;
+      }
+    });
   </script>
 </body>
 </html>
 
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-    <html>
-    <head>
-    
-    
-    
-    
-        <footer>
-            <p>&copy; 2023 ShaZan. All rights reserved.</p>
-        </footer>
-    </body>
-    </html>
-
-
-    For user feedback: https://forms.gle/xmeUoKoSptDrjQYo8
-
+<footer>
+  <p>&copy; 2023 ShaZan. All rights reserved.</p>
+</footer>
+</body>
 </html>
+

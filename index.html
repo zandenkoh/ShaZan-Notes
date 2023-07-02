@@ -10,8 +10,10 @@
     }
 
     .banner {
-      background-color: #547278;
-      color: #fff;
+      background-image: url('https://rare-gallery.com/mocahbig/391716-beach-ocean-wave-aerial-view-scenery-4k-pc-wallpaper.jpg'); /* Replace with the URL of your image */
+      background-size: cover;
+      background-position: center;
+      color: #000000;
       text-align: center;
       padding: 20px;
     }
@@ -37,6 +39,20 @@
   <!-- Rest of your website content goes here -->
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -73,12 +89,15 @@
     h1 {
       text-align: center;
       margin-bottom: 20px;
-      color: #333;
-      
+      color: #ffffff;
     }
-    
+
+    p {
+        color:#ffffff;
+    }
+
     h2 {
-        text-transform: uppercase;
+      text-transform: uppercase;
     }
 
     .note {
@@ -166,6 +185,36 @@
 
     .note-delete-button:hover {
       color: #ff0000;
+    }
+
+    /* Media queries for responsive design */
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      .note-title {
+        font-size: 16px;
+      }
+
+      .note-content {
+        font-size: 12px;
+      }
+
+      .note-label {
+        font-size: 10px;
+      }
+
+      .note-input input[type="text"],
+      .note-input textarea {
+        font-size: 12px;
+      }
+
+      .note-input button {
+        font-size: 12px;
+        padding: 4px 8px;
+      }
     }
   </style>
 </head>
@@ -273,7 +322,6 @@
 
         notesContainer.appendChild(noteElement);
 
-        // Add event listener for delete button
         deleteButton.addEventListener('click', function () {
           noteElement.remove();
           saveNotes();
@@ -283,19 +331,28 @@
 
     // Function to save notes to local storage
     function saveNotes() {
-      const noteElements = Array.from(notesContainer.querySelectorAll('.note'));
-      const notes = noteElements.map(function (noteElement) {
-        const title = noteElement.querySelector('.note-title').textContent;
-        const content = noteElement.querySelector('.note-content').textContent;
-        const label = noteElement.querySelector('.note-label').textContent;
-        return { title, content, label };
-      });
+      const notes = [];
+      const noteElements = notesContainer.getElementsByClassName('note');
+      for (let i = 0; i < noteElements.length; i++) {
+        const noteElement = noteElements[i];
+        const titleElement = noteElement.getElementsByClassName('note-title')[0];
+        const contentElement = noteElement.getElementsByClassName('note-content')[0];
+        const labelElement = noteElement.getElementsByClassName('note-label')[0];
+
+        const note = {
+          title: titleElement.textContent,
+          content: contentElement.textContent,
+          label: labelElement.textContent,
+        };
+        notes.push(note);
+      }
       localStorage.setItem('notes', JSON.stringify(notes));
     }
 
-    // Event listener for save button click
+    // Add event listener for save button
     saveButton.addEventListener('click', createNote);
 
+    // Load saved notes on page load
     loadNotes();
   </script>
 </body>
@@ -308,13 +365,6 @@
 
 
 
-
-
-<br 
-
-
-
-<html> 
 
 <!DOCTYPE html>
     <html>
